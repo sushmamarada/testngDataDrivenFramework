@@ -25,17 +25,18 @@ public class DriverInstance {
             System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
             driver = new FirefoxDriver();
         }
-       /* else if(Utility.fetchPropertyValue("browserName", "config.properties").equalsIgnoreCase("ie"))
+        else if(Utility.fetchPropertyValue("browserName", "config.properties").equalsIgnoreCase("ie"))
         {
             System.setProperty("webdriver.chrome.driver", "/usr/bin/geckodriver");
             driver = new InternetExplorerDriver();
-        }*/
+        }
         else
         {
             System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
             driver = new ChromeDriver();
         }
         driver.get(Utility.fetchPropertyValue("applicationURL","config.properties"));
+        driver.manage().window().maximize();
     }
 
     @AfterMethod

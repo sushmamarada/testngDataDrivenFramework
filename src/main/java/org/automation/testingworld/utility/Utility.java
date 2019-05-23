@@ -8,9 +8,11 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Utility {
+
     @Test
     public static String fetchPropertyValue(String key, String fileName) throws IOException {
         InputStream input= Utility.class.getClassLoader().getResourceAsStream(fileName);
+        //System.out.println(input);
         Properties prop=new Properties();
         if (input == null)
         {
@@ -21,22 +23,9 @@ public class Utility {
         //load a properties file from class path, inside static method
         prop.load(input);
 
-        //get the property value and print it out
-
-        //System.out.println(prop.getProperty(key));        
-
+        //get the property value and print it out       
         return prop.getProperty(key);
 
-       /* FileInputStream file=new FileInputStream("./Config/config.properties");
-        Properties property=new Properties();
-        property.load(file);
-        return property.get(key).toString();*/
     }
-   /* public static String fetchLocatorValue(String key)throws IOException{
 
-        FileInputStream file=new FileInputStream("./Config/Elements.properties");
-        Properties property=new Properties();
-        property.load(file);
-        return property.get(key).toString();
-    }*/
 }
