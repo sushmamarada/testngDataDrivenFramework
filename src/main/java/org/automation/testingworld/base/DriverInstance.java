@@ -17,22 +17,22 @@ public class DriverInstance {
     public void initiateDriverInstance() throws IOException {
         if(Utility.fetchPropertyValue("browserName","config.properties").equalsIgnoreCase("chrome"))
         {
-            System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver");
             driver = new ChromeDriver();
         }
         else if(Utility.fetchPropertyValue("browserName", "config.properties").equalsIgnoreCase("firefox"))
         {
-            System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+            System.setProperty("webdriver.gecko.driver", "./Driver/geckodriver");
             driver = new FirefoxDriver();
         }
         else if(Utility.fetchPropertyValue("browserName", "config.properties").equalsIgnoreCase("ie"))
         {
-            System.setProperty("webdriver.chrome.driver", "/usr/bin/geckodriver");
+            System.setProperty("webdriver.chrome.driver", "./Driver/geckodriver");
             driver = new InternetExplorerDriver();
         }
         else
         {
-            System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver");
             driver = new ChromeDriver();
         }
         driver.get(Utility.fetchPropertyValue("applicationURL","config.properties"));
