@@ -100,3 +100,8 @@ If the parent and child class have same name of the method & same signature is c
 | Procted     | Yes            | Yes           |Yes              |NO                |
 | Default     | Yes            | Yes           |NO               |NO                |
 | Private     | Yes            | NO            |NO               |NO                |
+
+Public: Member of class can be accessed throughout the project by creating the object<br>
+Protected: Can be accessed in same package and child class in other packages<br>
+Default(package):Can be accesses within the package only<br>
+Private: Can be accessed within the class only, not out side the class<br>
